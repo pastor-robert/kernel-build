@@ -11,7 +11,6 @@ cd linux-5.19.14
 cp ../config.config .config
 docker -it --rm -v $PWD:/work kernel-build make menuconfig
 docker -it --rm -v $PWD:/work kernel-build make 
-docker -it --rm -v $PWD:/work kernel-build make install
 ```
 
 ## Trivial Initramfs
