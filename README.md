@@ -8,6 +8,7 @@ A docker image that contains everything required to build a kernel.
 curl https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.14.tar.xz
 tar xf linux-5.19.14.tar.xz
 cd linux-5.19.14
+cp ../config.config .config
 docker -it --rm -v $PWD:/work kernel-build make menuconfig
 docker -it --rm -v $PWD:/work kernel-build make 
 docker -it --rm -v $PWD:/work kernel-build make install
