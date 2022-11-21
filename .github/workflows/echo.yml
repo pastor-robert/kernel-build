@@ -1,0 +1,19 @@
+# Testing github workflow. Nothing interesting should happen.
+
+name: Lint, test, build, push
+
+on:
+  push:
+    # any branch with no "/", i.e. a top-level branch
+    branches: ['*']
+  pull_request:
+    branches: ['**']
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      run: |
+        echo echo build
+
+
