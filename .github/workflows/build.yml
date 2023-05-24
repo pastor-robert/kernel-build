@@ -1,27 +1,13 @@
-# Testing github workflow. Nothing interesting should happen.
-
-name: Lint, test, build, push
-
-on:
-  push:
-    # any branch with no "/", i.e. a top-level branch
-    branches: ['*']
-  pull_request:
-    branches: ['**']
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: [push]
 jobs:
-  build:
-    name: Build
+  check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: docker build
-        uses: docker/build-push-action@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          tag_with_ref: true
-          tag_with_sha: true
-          tags: latest
-          # push...
-          
-
-
+          node-version: '14'
+      - run: npm install -g bats
+      - run: bats -v

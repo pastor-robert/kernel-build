@@ -6,6 +6,7 @@ RUN apt-get update && apt-get upgrade && apt-get install -y \
   bc \
   bison \
   build-essential \
+  cpio \
   fakeroot \
   flex \
   git \
@@ -18,6 +19,7 @@ RUN apt-get update && apt-get upgrade && apt-get install -y \
   qemu-system-gui \
   qemu-system-x86 \
   qemu-utils \
-  xz-utils
+  xz-utils \
+  zstd
 
 WORKDIR /work
